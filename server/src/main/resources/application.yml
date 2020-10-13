@@ -1,0 +1,16 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eurka-server
+
+eureka:
+  instance:
+    hostname: eurka-server
+  client:
+    # 两个false声明为服务
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
